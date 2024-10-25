@@ -50,5 +50,24 @@ label5.place(x=50, y=200)
 
 Round_box = PhotoImage(file="Images/RoundRect_1.png")
 
+#search box
+Search_image = PhotoImage(file="Images/RoundRect_3.png")
+my_image = Label(image=Search_image, bg="#57adff")
+my_image.place(x=270,y=120)
+
+weat_image = PhotoImage(file="Images/cloud.png")
+weather_image = Label(root, image=weat_image, bg="#203243")
+weather_image.place(x=290, y=127)
+
+text_field = Entry(root, justify="center",
+                   width=15, font=("poppins", 25, "bold"),
+                   bg="#203243", border=0, fg="white")
+text_field.place(x=370, y=130)
+text_field.focus()
+
+Search_icon = PhotoImage(file="Images/looking_glass.png")
+my_image_icon = Button(image=Search_icon, borderwidth=0, cursor='hand2', bg="#203243")
+my_image_icon.place(x=645, y=125)
+
 mainloop()
 
