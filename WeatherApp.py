@@ -1,7 +1,8 @@
 from tkinter import *
 import tkinter as tk
-from geopy.geocoders import nominatim
-from timezonefinder import timezonefinder
+
+from geopy.geocoders import Nominatim
+from timezonefinder import TimezoneFinder
 from datetime import *
 import requests
 import pytz
@@ -53,7 +54,7 @@ Round_box = PhotoImage(file="Images/RoundRect_1.png")
 # search box
 Search_image = PhotoImage(file="Images/RoundRect_3.png")
 my_image = Label(image=Search_image, bg="#57adff")
-my_image.place(x=270,y=120)
+my_image.place(x=270, y=120)
 
 weat_image = PhotoImage(file="Images/cloud.png")
 weather_image = Label(root, image=weat_image, bg="#203243")
@@ -66,7 +67,25 @@ text_field.place(x=370, y=130)
 text_field.focus()
 
 Search_icon = PhotoImage(file="Images/looking_glass.png")
-my_image_icon = Button(image=Search_icon, borderwidth=0, cursor='hand2', bg="#203243")
+
+
+def getWeather():
+    city = text_field.get()
+    geolocator = Nominatim(user_agent="geoapiExercises")
+    location = geolocator.geocode(city)
+
+    obj = TimezoneFinder()
+    result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
+    timezone.config(text=result)
+
+    long_lat.config(text=f"{round(location.latitude, 4)}°N, "
+                         f"{round(location.longitude, 1)}°E")
+    home = pytz.timezone(result)
+    local_time = datetime.now(home)
+    current_time = local_time.strftime("%I:%M %p")
+    clock.config(text=current_time)
+
+my_image_icon = Button(image=Search_icon, borderwidth=0, cursor='hand2', bg="#203243", command=getWeather())
 my_image_icon.place(x=645, y=125)
 
 # bottom boxes
@@ -93,10 +112,9 @@ clock.place(x=30, y=20)
 # timezone
 
 timezone = Label(root, font=("Helvetica", 20), fg="white", bg="#57adff")
-timezone.place(x=700, y=20)
+timezone.place(x=30, y=20)
 
 long_lat = Label(root, font=("Helvetica", 20), fg="white", bg="#57adff")
 long_lat.place(x=700, y=50)
 
 mainloop()
-
