@@ -13,11 +13,11 @@ root.geometry("890x470+300+300")
 root.configure(bg="#57adff")
 root.resizable(False, False)
 
-#Icon
+# Icon
 image_icon = PhotoImage(file="Images/logo.png")
 root.iconphoto(False, image_icon)
 
-#Labels
+# Labels
 label1 = Label(root, text="Temperature",
                font=("Helvetica", 11),
                fg="white",
@@ -50,7 +50,7 @@ label5.place(x=50, y=200)
 
 Round_box = PhotoImage(file="Images/RoundRect_1.png")
 
-#search box
+# search box
 Search_image = PhotoImage(file="Images/RoundRect_3.png")
 my_image = Label(image=Search_image, bg="#57adff")
 my_image.place(x=270,y=120)
@@ -68,6 +68,35 @@ text_field.focus()
 Search_icon = PhotoImage(file="Images/looking_glass.png")
 my_image_icon = Button(image=Search_icon, borderwidth=0, cursor='hand2', bg="#203243")
 my_image_icon.place(x=645, y=125)
+
+# bottom boxes
+
+frame = Frame(root, width=900, height=180, bg="#212120")
+frame.pack(side=BOTTOM)
+
+firstbox = PhotoImage(file="Images/RoundSq.png")
+secondbox = PhotoImage(file="Images/RoundRect_2.png")
+
+Label(frame, image=firstbox, bg="#212120").place(x=30, y=20)
+Label(frame, image=secondbox, bg="#212120").place(x=300, y=30)
+Label(frame, image=secondbox, bg="#212120").place(x=400, y=30)
+Label(frame, image=secondbox, bg="#212120").place(x=500, y=30)
+Label(frame, image=secondbox, bg="#212120").place(x=600, y=30)
+Label(frame, image=secondbox, bg="#212120").place(x=700, y=30)
+Label(frame, image=secondbox, bg="#212120").place(x=800, y=30)
+
+# clock
+
+clock = Label(root, text="2:30pm", font=("Helvetica", 30, 'bold'), fg='white', bg='#57adff')
+clock.place(x=30, y=20)
+
+# timezone
+
+timezone = Label(root, font=("Helvetica", 20), fg="white", bg="#57adff")
+timezone.place(x=700, y=20)
+
+long_lat = Label(root, font=("Helvetica", 20), fg="white", bg="#57adff")
+long_lat.place(x=700, y=50)
 
 mainloop()
 
