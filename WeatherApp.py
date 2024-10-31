@@ -85,6 +85,27 @@ def getWeather():
     current_time = local_time.strftime("%I:%M %p")
     clock.config(text=current_time)
 
+    api = ("https://api.openweathermap.org/data/2.5/weather!lat=" +
+            str(location.latitude) +
+           "&lon=" + str(location.longitude) +
+          "&appid={999999999999999999999999999999999}") # NOT ACTUAL API KEY
+
+    json_data = requests.get(api).json()
+
+    # current
+
+    temp = json_data['main']['temp']
+    humidity = json_data['main']['humidity']
+    pressure = json_data['main']['pressure']
+    wind = json_data['main']['speed']
+    description = json_data['main']['weather'][0]['description']
+
+    t.config(text=(temp,"K"))
+    h.config(text=(temp,"%"))
+    p.config(text=(temp,"hPa"))
+    w.config(text=(temp,"m/s"))
+    d.config(text=description)
+
 my_image_icon = Button(image=Search_icon, borderwidth=0, cursor='hand2', bg="#203243", command=getWeather())
 my_image_icon.place(x=645, y=125)
 
@@ -116,5 +137,21 @@ timezone.place(x=30, y=20)
 
 long_lat = Label(root, font=("Helvetica", 20), fg="white", bg="#57adff")
 long_lat.place(x=700, y=50)
+
+t = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+t.place(x=150, y=120)
+
+h = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+h.place(x=150, y=140)
+
+p = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+p.place(x=150, y=160)
+
+w = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+w.place(x=150, y=180)
+
+d = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+d.place(x=150, y=200)
+
 
 mainloop()
