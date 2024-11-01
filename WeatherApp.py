@@ -85,12 +85,19 @@ def getWeather():
     current_time = local_time.strftime("%I:%M %p")
     clock.config(text=current_time)
 
+    # api_one_call = ("https://api.openweathermap.org/data/2.5/onecall!lat=" +
+    #         str(location.latitude) +
+    #        "&lon=" + str(location.longitude) +
+    #       "&units=metric&exclude=hourly" +
+    #       "&appid={AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe}")  # NOT ACTUAL API KEY
+
     api = ("https://api.openweathermap.org/data/2.5/weather!lat=" +
-            str(location.latitude) +
+           str(location.latitude) +
            "&lon=" + str(location.longitude) +
-          "&appid={999999999999999999999999999999999}") # NOT ACTUAL API KEY
+           "&appid={AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe}")  # NOT ACTUAL API KEY
 
     json_data = requests.get(api).json()
+    # json_data_one_call = requests.get(api_one_call).json()
 
     # current
 
@@ -100,11 +107,27 @@ def getWeather():
     wind = json_data['main']['speed']
     description = json_data['main']['weather'][0]['description']
 
+    # one call for Celsius
+
+    # temp_one_call = json_data_one_call['current']['temp']
+    # humidity_one_call = json_data_one_call['current']['humidity']
+    # pressure_one_call = json_data_one_call['current']['pressure']
+    # wind_one_call = json_data_one_call['current']['wind_speed']
+    # description_one_call = json_data_one_call['current']['weather'][0]['description']
+
     t.config(text=(temp,"K"))
     h.config(text=(temp,"%"))
     p.config(text=(temp,"hPa"))
     w.config(text=(temp,"m/s"))
     d.config(text=description)
+
+    # one call for Celsius
+
+    # t_one_call.config(text=(temp, "C"))
+    # h_one_call.config(text=(temp, "%"))
+    # p_one_call.config(text=(temp, "hPa"))
+    # w_one_call.config(text=(temp, "m/s"))
+    # d_one_call.config(text=description)
 
 my_image_icon = Button(image=Search_icon, borderwidth=0, cursor='hand2', bg="#203243", command=getWeather())
 my_image_icon.place(x=645, y=125)
@@ -152,6 +175,23 @@ w.place(x=150, y=180)
 
 d = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
 d.place(x=150, y=200)
+
+# one call for Celsius 
+
+# t_one_call = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+# t_one_call.place(x=150, y=120)
+#
+# h_one_call = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+# h_one_call.place(x=150, y=140)
+#
+# p_one_call = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+# p_one_call.place(x=150, y=160)
+#
+# w_one_call = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+# w_one_call.place(x=150, y=180)
+#
+# d_one_call = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
+# d_one_call.place(x=150, y=200)
 
 
 mainloop()
