@@ -129,6 +129,30 @@ def getWeather():
     # w_one_call.config(text=(temp, "m/s"))
     # d_one_call.config(text=description)
 
+    # days
+
+    first = datetime.now()
+    day_1.config(text=first.strftime("%A"))
+
+    second = first + timedelta(days=1)
+    day_2.config(text=second.strftime("%A"))
+
+    third = first + timedelta(days=2)
+    day_3.config(text=third.strftime("%A"))
+
+    forth = first + timedelta(days=3)
+    day_4.config(text=forth.strftime("%A"))
+
+    fifth = first + timedelta(days=4)
+    day_5.config(text=fifth.strftime("%A"))
+
+    sixth = first + timedelta(days=5)
+    day_6.config(text=sixth.strftime("%A"))
+
+    seventh = first + timedelta(days=6)
+    day_7.config(text=seventh.strftime("%A"))
+
+
 my_image_icon = Button(image=Search_icon, borderwidth=0, cursor='hand2', bg="#203243", command=getWeather())
 my_image_icon.place(x=645, y=125)
 
@@ -195,38 +219,59 @@ d.place(x=150, y=200)
 
 # first cell
 
-first_frame = Frame(root, width=230, height=132, bg="282829")
+first_frame = Frame(root, width=230, height=132, bg="#282829")
 first_frame.place(x=35, y=315)
+
+day_1 = Label(first_frame, font="arial 20", bg="#282829", fg="#fff")
+day_1.place(x=100, y=5)
 
 # second cell
 
-second_frame = Frame(root, width=70, height=15, bg="282829")
+second_frame = Frame(root, width=70, height=15, bg="#282829")
 second_frame.place(x=305, y=325)
+
+day_2 = Label(second_frame, font="arial 20", bg="#282829", fg="#fff")
+day_2.place(x=100, y=5)
 
 # third cell
 
-third_frame = Frame(root, width=70, height=15, bg="282829")
+third_frame = Frame(root, width=70, height=15, bg="#282829")
 third_frame.place(x=405, y=325)
+
+day_3 = Label(third_frame, font="arial 20", bg="#282829", fg="#fff")
+day_3.place(x=100, y=5)
 
 # fourth cell
 
-fourth_frame = Frame(root, width=70, height=15, bg="282829")
+fourth_frame = Frame(root, width=70, height=15, bg="#282829")
 fourth_frame.place(x=505, y=325)
+
+day_4 = Label(fourth_frame, font="arial 20", bg="#282829", fg="#fff")
+day_4.place(x=100, y=5)
 
 # fifth cell
 
-fifth_frame = Frame(root, width=70, height=15, bg="282829")
+fifth_frame = Frame(root, width=70, height=15, bg="#282829")
 fifth_frame.place(x=605, y=325)
+
+day_5 = Label(fifth_frame, font="arial 20", bg="#282829", fg="#fff")
+day_5.place(x=100, y=5)
 
 # sixth cell
 
-sixth_frame = Frame(root, width=70, height=15, bg="282829")
+sixth_frame = Frame(root, width=70, height=15, bg="#282829")
 sixth_frame.place(x=705, y=325)
+
+day_6 = Label(sixth_frame, font="arial 20", bg="#282829", fg="#fff")
+day_6.place(x=100, y=5)
 
 # seventh cell
 
 seventh_frame = Frame(root, width=70, height=15, bg="282829")
 seventh_frame.place(x=805, y=325)
+
+day_7 = Label(seventh_frame, font="arial 20", bg="#282829", fg="#fff")
+day_7.place(x=100, y=5)
 
 
 mainloop()
