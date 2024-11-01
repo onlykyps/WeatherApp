@@ -176,7 +176,7 @@ w.place(x=150, y=180)
 d = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
 d.place(x=150, y=200)
 
-# one call for Celsius 
+# one call for Celsius
 
 # t_one_call = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
 # t_one_call.place(x=150, y=120)
@@ -192,6 +192,41 @@ d.place(x=150, y=200)
 #
 # d_one_call = Label(root, font=("Helvetica", 20), fg="white", bg="#203243")
 # d_one_call.place(x=150, y=200)
+
+# first cell
+
+first_frame = Frame(root, width=230, height=132, bg="282829")
+first_frame.place(x=35, y=315)
+
+# second cell
+
+second_frame = Frame(root, width=70, height=15, bg="282829")
+second_frame.place(x=305, y=325)
+
+# third cell
+
+third_frame = Frame(root, width=70, height=15, bg="282829")
+third_frame.place(x=405, y=325)
+
+# fourth cell
+
+fourth_frame = Frame(root, width=70, height=15, bg="282829")
+fourth_frame.place(x=505, y=325)
+
+# fifth cell
+
+fifth_frame = Frame(root, width=70, height=15, bg="282829")
+fifth_frame.place(x=605, y=325)
+
+# sixth cell
+
+sixth_frame = Frame(root, width=70, height=15, bg="282829")
+sixth_frame.place(x=705, y=325)
+
+# seventh cell
+
+seventh_frame = Frame(root, width=70, height=15, bg="282829")
+seventh_frame.place(x=805, y=325)
 
 
 mainloop()
