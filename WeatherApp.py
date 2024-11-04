@@ -115,10 +115,10 @@ def getWeather():
     # wind_one_call = json_data_one_call['current']['wind_speed']
     # description_one_call = json_data_one_call['current']['weather'][0]['description']
 
-    t.config(text=(temp,"K"))
-    h.config(text=(temp,"%"))
-    p.config(text=(temp,"hPa"))
-    w.config(text=(temp,"m/s"))
+    t.config(text=(temp, "K"))
+    h.config(text=(temp, "%"))
+    p.config(text=(temp, "hPa"))
+    w.config(text=(temp, "m/s"))
     d.config(text=description)
 
     # one call for Celsius
@@ -136,7 +136,6 @@ def getWeather():
     photo_one = ImageTk.PhotoImage(file=f"icon/{first_day_image}")
     first_day_image.config(image=photo_one)
     first_image.image = photo_one
-
 
     # second cell
 
@@ -308,6 +307,9 @@ first_image.place(x=1, y=15)
 day_1 = Label(first_frame, font="arial 20", bg="#282829", fg="#fff")
 day_1.place(x=100, y=5)
 
+day_one_temp = Label(first_frame, bg="#282829", fg="#57adff", font="arial 15 bold")
+day_one_temp.place(x=100, y=50)
+
 # second cell
 
 second_frame = Frame(root, width=70, height=15, bg="#282829")
@@ -318,6 +320,9 @@ second_image.place(x=7, y=20)
 
 day_2 = Label(second_frame, font="arial 20", bg="#282829", fg="#fff")
 day_2.place(x=100, y=5)
+
+day_two_temp = Label(first_frame, bg="#282829", fg="#57adff", font="arial 15 bold")
+day_two_temp.place(x=100, y=50)
 
 # third cell
 
@@ -330,6 +335,9 @@ day_3.place(x=100, y=5)
 third_image = Label(first_frame, bg="282829")
 third_image.place(x=7, y=20)
 
+day_three_temp = Label(first_frame, bg="#282829", fg="#57adff", font="arial 15 bold")
+day_three_temp.place(x=100, y=50)
+
 # fourth cell
 
 fourth_frame = Frame(root, width=70, height=15, bg="#282829")
@@ -340,6 +348,9 @@ day_4.place(x=100, y=5)
 
 fourth_image = Label(first_frame, bg="282829")
 fourth_image.place(x=7, y=20)
+
+day_four_temp = Label(first_frame, bg="#282829", fg="#57adff", font="arial 15 bold")
+day_four_temp.place(x=100, y=50)
 
 # fifth cell
 
@@ -352,6 +363,9 @@ day_5.place(x=100, y=5)
 fifth_image = Label(first_frame, bg="282829")
 fifth_image.place(x=7, y=20)
 
+day_five_temp = Label(first_frame, bg="#282829", fg="#57adff", font="arial 15 bold")
+day_five_temp.place(x=100, y=50)
+
 # sixth cell
 
 sixth_frame = Frame(root, width=70, height=15, bg="#282829")
@@ -363,6 +377,8 @@ day_6.place(x=100, y=5)
 sixth_image = Label(first_frame, bg="282829")
 sixth_image.place(x=7, y=20)
 
+day_six_temp = Label(first_frame, bg="#282829", fg="#57adff", font="arial 15 bold")
+day_six_temp.place(x=100, y=50)
 
 # seventh cell
 
@@ -375,5 +391,7 @@ day_7.place(x=100, y=5)
 seventh_image = Label(first_frame, bg="282829")
 seventh_image.place(x=7, y=20)
 
+day_seven_temp = Label(first_frame, bg="#282829", fg="#57adff", font="arial 15 bold")
+day_seven_temp.place(x=100, y=50)
 
 mainloop()
