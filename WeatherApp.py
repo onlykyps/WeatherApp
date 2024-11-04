@@ -133,36 +133,81 @@ def getWeather():
 
     first_day_image = json_data['daily'][0]['weather'][0]['icon']
     print(first_day_image)
+    photo_one = ImageTk.PhotoImage(file=f"icon/{first_day_image}")
+    first_day_image.config(image=photo_one)
+    first_image.image = photo_one
+
 
     # second cell
 
     second_day_image = json_data['daily'][1]['weather'][1]['icon']
     print(second_day_image)
+    img = (Image.open(f"icon/{second_day_image}@2x.png"))
+    resized_image = img.resize((50, 50))
+    photo_two = ImageTk.PhotoImage(resized_image)
+    second_day_image.config(image=photo_two)
+    second_image.image = photo_two
 
     # third cell
 
     third_day_image = json_data['daily'][2]['weather'][2]['icon']
     print(third_day_image)
 
+    img = (Image.open(f"icon/{second_day_image}@2x.png"))
+    resized_image = img.resize((50, 50))
+
+    photo_three = ImageTk.PhotoImage(resized_image)
+    third_day_image.config(image=photo_three)
+    third_image.image = photo_three
+
     # fourth cell
 
     fourth_day_image = json_data['daily'][3]['weather'][3]['icon']
     print(fourth_day_image)
+
+    img = (Image.open(f"icon/{second_day_image}@2x.png"))
+    resized_image = img.resize((50, 50))
+
+    photo_fourth = ImageTk.PhotoImage(resized_image)
+
+    fourth_day_image.config(image=photo_fourth)
+    fourth_image.image = photo_fourth
 
     # fifth cell
 
     fifth_day_image = json_data['daily'][4]['weather'][4]['icon']
     print(fifth_day_image)
 
+    img = (Image.open(f"icon/{second_day_image}@2x.png"))
+    resized_image = img.resize((50, 50))
+
+    photo_fifth = ImageTk.PhotoImage(resized_image)
+    fifth_day_image.config(image=photo_fifth)
+    fifth_image.image = photo_fifth
+
     # sixth cell
 
     sixth_day_image = json_data['daily'][5]['weather'][5]['icon']
     print(sixth_day_image)
 
+    img = (Image.open(f"icon/{second_day_image}@2x.png"))
+    resized_image = img.resize((50, 50))
+
+    photo_sixth = ImageTk.PhotoImage(resized_image)
+    sixth_day_image.config(image=photo_sixth)
+    sixth_image.image = photo_sixth
+
     # seventh cell
 
     seventh_day_image = json_data['daily'][6]['weather'][6]['icon']
     print(seventh_day_image)
+
+    img = (Image.open(f"icon/{second_day_image}@2x.png"))
+    resized_image = img.resize((50, 50))
+
+    photo_seventh = ImageTk.PhotoImage(resized_image)
+    seventh_day_image.config(image=photo_seventh)
+    seventh_image.image = photo_seventh
 
     # days
 
