@@ -129,6 +129,41 @@ def getWeather():
     # w_one_call.config(text=(temp, "m/s"))
     # d_one_call.config(text=description)
 
+    # first cell
+
+    first_day_image = json_data['daily'][0]['weather'][0]['icon']
+    print(first_day_image)
+
+    # second cell
+
+    second_day_image = json_data['daily'][1]['weather'][1]['icon']
+    print(second_day_image)
+
+    # third cell
+
+    third_day_image = json_data['daily'][2]['weather'][2]['icon']
+    print(third_day_image)
+
+    # fourth cell
+
+    fourth_day_image = json_data['daily'][3]['weather'][3]['icon']
+    print(fourth_day_image)
+
+    # fifth cell
+
+    fifth_day_image = json_data['daily'][4]['weather'][4]['icon']
+    print(fifth_day_image)
+
+    # sixth cell
+
+    sixth_day_image = json_data['daily'][5]['weather'][5]['icon']
+    print(sixth_day_image)
+
+    # seventh cell
+
+    seventh_day_image = json_data['daily'][6]['weather'][6]['icon']
+    print(seventh_day_image)
+
     # days
 
     first = datetime.now()
@@ -222,6 +257,9 @@ d.place(x=150, y=200)
 first_frame = Frame(root, width=230, height=132, bg="#282829")
 first_frame.place(x=35, y=315)
 
+first_image = Label(first_frame, bg="282829")
+first_image.place(x=1, y=15)
+
 day_1 = Label(first_frame, font="arial 20", bg="#282829", fg="#fff")
 day_1.place(x=100, y=5)
 
@@ -229,6 +267,9 @@ day_1.place(x=100, y=5)
 
 second_frame = Frame(root, width=70, height=15, bg="#282829")
 second_frame.place(x=305, y=325)
+
+second_image = Label(first_frame, bg="3282829")
+second_image.place(x=7, y=20)
 
 day_2 = Label(second_frame, font="arial 20", bg="#282829", fg="#fff")
 day_2.place(x=100, y=5)
@@ -241,6 +282,9 @@ third_frame.place(x=405, y=325)
 day_3 = Label(third_frame, font="arial 20", bg="#282829", fg="#fff")
 day_3.place(x=100, y=5)
 
+third_image = Label(first_frame, bg="282829")
+third_image.place(x=7, y=20)
+
 # fourth cell
 
 fourth_frame = Frame(root, width=70, height=15, bg="#282829")
@@ -248,6 +292,9 @@ fourth_frame.place(x=505, y=325)
 
 day_4 = Label(fourth_frame, font="arial 20", bg="#282829", fg="#fff")
 day_4.place(x=100, y=5)
+
+fourth_image = Label(first_frame, bg="282829")
+fourth_image.place(x=7, y=20)
 
 # fifth cell
 
@@ -257,6 +304,9 @@ fifth_frame.place(x=605, y=325)
 day_5 = Label(fifth_frame, font="arial 20", bg="#282829", fg="#fff")
 day_5.place(x=100, y=5)
 
+fifth_image = Label(first_frame, bg="282829")
+fifth_image.place(x=7, y=20)
+
 # sixth cell
 
 sixth_frame = Frame(root, width=70, height=15, bg="#282829")
@@ -265,6 +315,10 @@ sixth_frame.place(x=705, y=325)
 day_6 = Label(sixth_frame, font="arial 20", bg="#282829", fg="#fff")
 day_6.place(x=100, y=5)
 
+sixth_image = Label(first_frame, bg="282829")
+sixth_image.place(x=7, y=20)
+
+
 # seventh cell
 
 seventh_frame = Frame(root, width=70, height=15, bg="282829")
@@ -272,6 +326,9 @@ seventh_frame.place(x=805, y=325)
 
 day_7 = Label(seventh_frame, font="arial 20", bg="#282829", fg="#fff")
 day_7.place(x=100, y=5)
+
+seventh_image = Label(first_frame, bg="282829")
+seventh_image.place(x=7, y=20)
 
 
 mainloop()
